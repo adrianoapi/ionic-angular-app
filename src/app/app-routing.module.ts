@@ -26,7 +26,8 @@ const routes: Routes = [
   {
     path: 'student-detail',
     loadChildren: () => import('./student-detail/student-detail.module').then( m => m.StudentDetailPageModule)
-  },  {
+  },
+  {
     path: 'contacts',
     loadChildren: () => import('./contacts/contacts.module').then( m => m.ContactsPageModule)
   },
@@ -34,6 +35,11 @@ const routes: Routes = [
     path: 'chat',
     loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
   },
+  {
+    path: 'user-detail',
+    loadChildren: () => import('./user-detail/user-detail.module').then( m => m.UserDetailPageModule)
+  },
+
 
 ];
 

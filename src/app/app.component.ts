@@ -70,7 +70,7 @@ export class AppComponent {
       },
       {
         title : "Profile",
-        url   : "/home",
+        url   : "/user-detail",
         icon  : "finger-print"
       },
       {
