@@ -39,16 +39,16 @@ export class AppComponent {
       {
         title : "Chat",
         url   : "/chat",
-        icon  : "chatboxes"
+        icon  : "chatbubbles-outline"
       },
       {
         title : "Contacts",
         url   : "/contacts",
-        icon  : "contacts"
+        icon  : "mail-open-outline"
       },{
         title : "Students",
         url   : "/student-list",
-        icon  : "contacts"
+        icon  : "laptop-outline"
       },
     ];
   }

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="tertiary">
       <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
       </ion-buttons>
@@ -27,7 +27,7 @@
         <td>{{ item.age }}</td>
         <td>{{ item.address }}</td>
         <td style="display: flex">
-          <ion-button color="warning" size="small" routerLink="/student-edit/{{ item.id }}">
+          <ion-button color="primary" size="small" routerLink="/student-edit/{{ item.id }}">
             <ion-icon name="create"></ion-icon>
           </ion-button>
           <ion-button color="danger" size="small" (click)="delete(item)">
