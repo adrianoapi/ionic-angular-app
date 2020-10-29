@@ -15,22 +15,18 @@
     {
       "name": "adriano",
       "age": "333",
-      "id": 5
+      "id": 5,
+      "address": "api@hotmail.com"
     },
     {
-      "age": "gfdg",
-      "name": "fgdfg",
+      "name": "Newton",
+      "age": "123",
       "id": 6
     },
     {
-      "name": "ddd",
-      "age": "ddd",
+      "name": "adriano",
+      "age": "32",
       "id": 7
-    },
-    {
-      "name": "555",
-      "age": "5",
-      "id": 8
     }
   ]
 }

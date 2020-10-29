@@ -1,8 +1,10 @@
+import { Router, RouterEvent } from '@angular/router';
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +12,17 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  navigate : any;
+  navigate: any;
+  selectedPath = '';
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private router: Router
   ) {
+    this.router.events.subscribe((event: RouterEvent) => {
+      this.selectedPath = event.url;
+    });
     this.sideMenu();
     this.initializeApp();
   }
@@ -37,18 +44,39 @@ export class AppComponent {
         icon  : "home"
       },
       {
-        title : "Chat",
-        url   : "/chat",
-        icon  : "chatbubbles-outline"
+        title : "Monitoring",
+        url   : "/home",
+        icon  : "pulse"
       },
       {
-        title : "Contacts",
-        url   : "/contacts",
-        icon  : "mail-open-outline"
-      },{
+        title : "Tasks",
+        url   : "/home",
+        icon  : "file-tray-full"
+      },
+      {
+        title : "MAPS",
+        url   : "/home",
+        icon  : "location"
+      },
+      {
+        title : "Operational",
+        url   : "/home",
+        icon  : "car"
+      },
+      {
+        title : "Device",
+        url   : "/home",
+        icon  : "watch"
+      },
+      {
+        title : "Profile",
+        url   : "/home",
+        icon  : "finger-print"
+      },
+      {
         title : "Students",
         url   : "/student-list",
-        icon  : "laptop-outline"
+        icon  : "desktop-sharp"
       },
     ];
   }
