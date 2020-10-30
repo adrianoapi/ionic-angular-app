@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>
+      Tasks
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-content class="ion-padding">
+    <table class="table">
+    <thead>
+    <tr>
+    <th scope="col">Id</th>
+    <th scope="col">title</th>
+    <th scope="col">Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of tasksData">
+    <td>{{ item.id }}</td>
+    <td>{{ item.title }}</td>
+    <td>{{ item.address }}</td>
+ 
+    </tr>
+    </tbody>
+    </table>
+ 
+    
+   </ion-content>
+   
+  
+
+  <ion-list>
+  
+    <!-- Multi-line sliding item with icon options on both sides -->
+    <ion-item-sliding id="item100">
+      <ion-item href="#">
+        <ion-label>
+          <h2>HubStruck Notifications</h2>
+          <p>A new message in your network</p>
+          <p>Oceanic Next has joined your network</p>
+        </ion-label>
+        <ion-note slot="end">
+          10:45 AM
+        </ion-note>
+      </ion-item>
+  
+    </ion-item-sliding>
+
+  </ion-list>
+
+</ion-content>

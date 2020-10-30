@@ -2,19 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 
 @Component({
-  selector: 'app-student-list',
-  templateUrl: './student-list.page.html',
-  styleUrls: ['./student-list.page.scss'],
+  selector: 'app-task-list',
+  templateUrl: './task-list.page.html',
+  styleUrls: ['./task-list.page.scss'],
 })
-export class StudentListPage implements OnInit {
+export class TaskListPage implements OnInit {
 
-  studentsData: any;
+  tasksData: any;
 
-  constructor(
-    public apiService: ApiService
-  ) {
-    this.studentsData = [];
-    this.apiService.preparaUrl('students');
+  constructor(public apiService: ApiService) {
+    this.tasksData = [];
+    this.apiService.preparaUrl('tasks');
   }
 
   ngOnInit() {
@@ -24,14 +22,15 @@ export class StudentListPage implements OnInit {
   ionViewWillEnter() {
     // Used ionViewWillEnter as ngOnInit is not 
     // called due to view persistence in Ionic
-    this.getAllStudents();
+    this.getAll();
   }
 
-  getAllStudents() {
+  getAll() {
     //Get saved list of students
+    this.apiService.page = 'tasks';
     this.apiService.getList().subscribe(response => {
       console.log(response);
-      this.studentsData = response;
+      this.tasksData = response;
     })
   }
 

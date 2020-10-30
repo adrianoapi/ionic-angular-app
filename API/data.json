@@ -17,16 +17,18 @@
       "age": "333",
       "id": 5,
       "address": "api@hotmail.com"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 2,
+      "title": "Timmothy Lueilwitz",
+      "addres": "37137 Abbigail Lock"
     },
     {
-      "name": "Newton",
-      "age": "123",
-      "id": 6
-    },
-    {
-      "name": "adriano",
-      "age": "32",
-      "id": 7
+      "id": 4,
+      "title": "Harley Cremin",
+      "addres": "14855 Cathy Square"
     }
   ]
 }

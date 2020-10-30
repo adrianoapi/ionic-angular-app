@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Student } from '../models/student';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class ApiService {
 
   // API path
   // tslint:disable-next-line: variable-name
-  base_path = 'http://localhost:3000/students';
+  base_path = '';
 
   constructor(private http: HttpClient) { }
 
@@ -40,6 +41,11 @@ export class ApiService {
       'Something bad happened; please try again later.');
   }
 
+  preparaUrl(page): Observable<Student> {
+    this.base_path = 'http://localhost:3000' + '/' + page;
+    console.log(this.base_path);
+    return page;
+  }
 
   // Create a new item
   createItem(item): Observable<Student> {

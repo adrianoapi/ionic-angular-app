@@ -50,7 +50,7 @@ export class AppComponent {
       },
       {
         title : "Tasks",
-        url   : "/home",
+        url   : "/task-list",
         icon  : "file-tray-full"
       },
       {

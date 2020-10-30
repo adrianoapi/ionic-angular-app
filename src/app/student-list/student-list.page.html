@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="tertiary">
       <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
       </ion-buttons>
@@ -13,18 +13,14 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">Id</th>
         <th scope="col">Name</th>
-        <th scope="col">Age</th>
         <th scope="col">Address</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of studentsData">
-        <td>{{ item.id }}</td>
         <td>{{ item.name }}</td>
-        <td>{{ item.age }}</td>
         <td>{{ item.address }}</td>
         <td style="display: flex">
           <ion-button color="primary" size="small" routerLink="/student-edit/{{ item.id }}">
@@ -37,7 +33,9 @@
       </tr>
     </tbody>
   </table>
-  <ion-button [routerLink]="['/student-create']">
+
+  <ion-button expand="full" color="primary" [routerLink]="['/student-create']">
     Add Student
   </ion-button>
+
 </ion-content>
