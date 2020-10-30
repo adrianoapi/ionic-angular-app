@@ -9,10 +9,11 @@ import { ApiService } from '../services/api.service';
 export class TaskListPage implements OnInit {
 
   tasksData: any;
+  url: any;
 
   constructor(public apiService: ApiService) {
     this.tasksData = [];
-    this.apiService.preparaUrl('tasks');
+    this.url = 'tasks';
   }
 
   ngOnInit() {
@@ -22,12 +23,12 @@ export class TaskListPage implements OnInit {
   ionViewWillEnter() {
     // Used ionViewWillEnter as ngOnInit is not 
     // called due to view persistence in Ionic
-    this.getAll();
+    this.getAllStudents();
   }
 
-  getAll() {
+  getAllStudents() {
+    this.apiService.preparaUrl(this.url);
     //Get saved list of students
-    this.apiService.page = 'tasks';
     this.apiService.getList().subscribe(response => {
       console.log(response);
       this.tasksData = response;

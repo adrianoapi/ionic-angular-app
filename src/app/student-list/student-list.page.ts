@@ -9,12 +9,11 @@ import { ApiService } from '../services/api.service';
 export class StudentListPage implements OnInit {
 
   studentsData: any;
+  url: any;
 
-  constructor(
-    public apiService: ApiService
-  ) {
+  constructor(public apiService: ApiService) {
     this.studentsData = [];
-    this.apiService.preparaUrl('students');
+    this.url = 'students';
   }
 
   ngOnInit() {
@@ -28,6 +27,7 @@ export class StudentListPage implements OnInit {
   }
 
   getAllStudents() {
+    this.apiService.preparaUrl(this.url);
     //Get saved list of students
     this.apiService.getList().subscribe(response => {
       console.log(response);
