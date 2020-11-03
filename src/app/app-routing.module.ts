@@ -38,12 +38,11 @@ const routes: Routes = [
   {
     path: 'user-detail',
     loadChildren: () => import('./user-detail/user-detail.module').then( m => m.UserDetailPageModule)
-  },  {
+  },
+  {
     path: 'task-list',
     loadChildren: () => import('./task-list/task-list.module').then( m => m.TaskListPageModule)
   },
-
-
 
 ];
 

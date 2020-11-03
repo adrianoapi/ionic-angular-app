@@ -1,6 +1,8 @@
+import { Task } from './../models/task';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { AlertController } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-list',
@@ -15,7 +17,8 @@ export class TaskListPage implements OnInit {
 
   constructor(
     public apiService: ApiService,
-    private alert: AlertController
+    private alert: AlertController,
+    public router: Router,
     ) {
     this.tasksData = [];
     this.url = 'tasks';
@@ -36,6 +39,7 @@ export class TaskListPage implements OnInit {
           role: 'cancel',
           cssClass: 'secondary',
           handler: (data) => {
+            console.log(item);
             this.status = "Confirm Canceled " + item.id;
             console.log(this.status);
           }
@@ -43,8 +47,11 @@ export class TaskListPage implements OnInit {
         {
           text: 'Ok',
           handler: (data) => {
-            this.status = "Confirm Ok " + item.id;
-            console.log(this.status);
+            let task = new Task();
+            task = item;
+            task.accepted = true;
+            
+            this.apiService.updateItem(item.id, task).subscribe(response => {});
           }
         }
       ]

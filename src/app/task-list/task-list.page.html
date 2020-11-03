@@ -26,9 +26,17 @@
         </ion-label>
         <ion-note slot="end">
 
-          <ion-button (click)="presentAlertCheckbox(item)">
-            <ion-icon name="checkmark"></ion-icon>
-          </ion-button>
+          <div *ngIf="item.accepted">
+            <ion-button color="success">
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </ion-button>
+           </div>
+
+           <div *ngIf="!item.accepted">
+            <ion-button (click)="presentAlertCheckbox(item)">
+              <ion-icon name="add"></ion-icon>
+            </ion-button>
+           </div>
 
         </ion-note>
       </ion-item>
