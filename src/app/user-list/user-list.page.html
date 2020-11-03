@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>
+      Users
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-content class="ion-padding">
+
+
+  <ion-list  *ngFor="let item of usersData">
+  
+    <!-- Multi-line sliding item with icon options on both sides -->
+    <ion-item-sliding id="{{item.id}}">
+      <ion-item>
+        <ion-label>
+          <h2>{{item.name}}</h2>
+          <p>{{item.email}}</p>
+          <p>Oceanic Next has joined your network</p>
+        </ion-label>
+        <ion-note slot="end">
+
+          
+          <ion-button color="primary">
+            <ion-icon name="chatbubbles"></ion-icon>
+          </ion-button>
+          
+
+        </ion-note>
+      </ion-item>
+  
+    </ion-item-sliding>
+
+  </ion-list>
+
+</ion-content>

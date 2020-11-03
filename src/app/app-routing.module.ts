@@ -32,16 +32,16 @@ const routes: Routes = [
     loadChildren: () => import('./contacts/contacts.module').then( m => m.ContactsPageModule)
   },
   {
-    path: 'chat',
-    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
-  },
-  {
     path: 'user-detail',
     loadChildren: () => import('./user-detail/user-detail.module').then( m => m.UserDetailPageModule)
   },
   {
     path: 'task-list',
     loadChildren: () => import('./task-list/task-list.module').then( m => m.TaskListPageModule)
+  },
+  {
+    path: 'user-list',
+    loadChildren: () => import('./user-list/user-list.module').then( m => m.UserListPageModule)
   },
 
 ];

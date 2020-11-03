@@ -25,7 +25,7 @@ export class TaskListPage implements OnInit {
   }
 
   ngOnInit() {
-    // this.getAllStudents();
+    this.getAllStudents();
   }
 
   async presentAlertCheckbox(item) {
