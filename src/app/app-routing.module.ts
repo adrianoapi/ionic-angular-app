@@ -43,6 +43,11 @@ const routes: Routes = [
     path: 'user-list',
     loadChildren: () => import('./user-list/user-list.module').then( m => m.UserListPageModule)
   },
+  {
+    path: 'message-list/:id',
+    loadChildren: () => import('./message-list/message-list.module').then( m => m.MessageListPageModule)
+  },
+
 
 ];
 

@@ -1,27 +1,29 @@
-import { User } from './../models/user';
+import { Message } from './../models/message';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { AlertController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.page.html',
-  styleUrls: ['./user-list.page.scss'],
+  selector: 'app-message-list',
+  templateUrl: './message-list.page.html',
+  styleUrls: ['./message-list.page.scss'],
 })
-export class UserListPage implements OnInit {
+export class MessageListPage implements OnInit {
 
-  usersData: any;
+  messagesData: any;
   url: any;
-  status:string="";
- 
+
+  id: number;
+  data: Message;
+
   constructor(
     public apiService: ApiService,
     private alert: AlertController,
     public router: Router,
     ) {
-    this.usersData = [];
-    this.url = 'users';
+    this.messagesData = [];
+    this.url = 'messages';
   }
 
   ngOnInit() {
@@ -39,7 +41,7 @@ export class UserListPage implements OnInit {
     //Get saved list of students
     this.apiService.getList().subscribe(response => {
       console.log(response);
-      this.usersData = response;
+      this.messagesData = response;
     })
   }
 
