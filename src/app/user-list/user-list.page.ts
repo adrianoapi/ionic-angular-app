@@ -14,6 +14,7 @@ export class UserListPage implements OnInit {
   usersData: any;
   url: any;
   status:string="";
+  from: number;
  
   constructor(
     public apiService: ApiService,
@@ -22,6 +23,7 @@ export class UserListPage implements OnInit {
     ) {
     this.usersData = [];
     this.url = 'users';
+    this.from = localStorage.loginId;
   }
 
   ngOnInit() {

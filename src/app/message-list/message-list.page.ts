@@ -14,10 +14,12 @@ export class MessageListPage implements OnInit {
   messagesData: any;
   url: any;
 
-  id: number;
+  from: number;
+  to: number;
   data: Message;
 
   constructor(
+    public activatedRoute: ActivatedRoute,
     public apiService: ApiService,
     private alert: AlertController,
     public router: Router,
@@ -27,6 +29,8 @@ export class MessageListPage implements OnInit {
   }
 
   ngOnInit() {
+    this.from = this.activatedRoute.snapshot.params["from"];
+    this.to = this.activatedRoute.snapshot.params["to"];
     this.getAllStudents();
   }
 
@@ -38,11 +42,21 @@ export class MessageListPage implements OnInit {
 
   getAllStudents() {
     this.apiService.preparaUrl(this.url);
-    //Get saved list of students
     this.apiService.getList().subscribe(response => {
-      console.log(response);
-      this.messagesData = response;
-    })
+      
+      let response_new = [];
+      const id = Number(this.from);
+
+      var count = 0;
+      for (let i in response) {
+        if(response[i]['from'] === Number(this.from) && response[i]['to'] === Number(this.to)){
+          response_new[count] = response[i];
+          count++;
+        }
+      }
+
+      this.messagesData = response_new;
+    });
   }
 
 

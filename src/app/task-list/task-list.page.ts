@@ -50,7 +50,6 @@ export class TaskListPage implements OnInit {
             let task = new Task();
             task = item;
             task.accepted = true;
-            
             this.apiService.updateItem(item.id, task).subscribe(response => {});
           }
         }

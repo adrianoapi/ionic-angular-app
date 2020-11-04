@@ -44,10 +44,13 @@ const routes: Routes = [
     loadChildren: () => import('./user-list/user-list.module').then( m => m.UserListPageModule)
   },
   {
-    path: 'message-list/:id',
+    path: 'message-list/:from/:to',
     loadChildren: () => import('./message-list/message-list.module').then( m => m.MessageListPageModule)
   },
-
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
 
 ];
 
