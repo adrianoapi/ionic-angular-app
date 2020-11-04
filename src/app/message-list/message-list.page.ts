@@ -45,11 +45,10 @@ export class MessageListPage implements OnInit {
     this.apiService.getList().subscribe(response => {
       
       let response_new = [];
-      const id = Number(this.from);
-
       var count = 0;
       for (let i in response) {
-        if(response[i]['from'] === Number(this.from) && response[i]['to'] === Number(this.to)){
+        if(response[i]['from'] === Number(this.from) && response[i]['to'] === Number(this.to) ||
+           response[i]['from'] === Number(this.to)   && response[i]['to'] === Number(this.from)){
           response_new[count] = response[i];
           count++;
         }
